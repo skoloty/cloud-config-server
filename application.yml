@@ -1,0 +1,19 @@
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
+    
+    
+microservice:
+  matching-service:
+    endpoints:
+      endpoint:
+        uri: http://MATHING-SERVICE/matching/doMatch
+  order-service:
+    endpoints:
+      endpoint:
+        uri: http://MAIN-SERVICE/main/parse-file
